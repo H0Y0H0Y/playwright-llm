@@ -61,7 +61,7 @@ test.describe('Login', () => {
     await expect(loginPage.errorMessage).toBeVisible();
     
     await loginPage.login('standard_user', 'secret_sauce');
-    await expect(inventoryPage.isOnInventoryPage()).toBeTruthy();
+    expect(inventoryPage.isOnInventoryPage()).toBeTruthy();
   });
 
   test('should logout and return to login page', async () => {
