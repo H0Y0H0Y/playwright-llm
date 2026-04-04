@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test';
-import BasePage from './basePage';
+import BasePage from 'pages/basePage';
 
 export default class LoginPage extends BasePage {
     constructor(page: Page) {
