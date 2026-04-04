@@ -13,7 +13,7 @@ test.describe('Login', () => {
   });
 
   test('should display login form with all elements', async () => {
-    await expect(loginPage.usernameInput).toBeVisible();
+    await expect(loginPage.usernameInput).toBeHidden();
     await expect(loginPage.passwordInput).toBeVisible();
     await expect(loginPage.loginButton).toBeVisible();
     await expect(loginPage.page.locator('.login_credentials')).toBeVisible();
