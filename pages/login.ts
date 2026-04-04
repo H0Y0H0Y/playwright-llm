@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test';
-import { BasePage } from 'pages/basePage';
+import BasePage from './basePage';
 
-export class LoginPage extends BasePage {
+export default class LoginPage extends BasePage {
     constructor(page: Page) {
         super(page);
     }
