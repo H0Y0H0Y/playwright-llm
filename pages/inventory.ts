@@ -7,7 +7,7 @@ export default class InventoryPage extends BasePage {
     }
 
     get pageTitle() {
-        return this.page.locator('.title');
+        return this.page.getByText('Products');
     }
 
     get productSortDropdown() {
@@ -103,6 +103,7 @@ export default class InventoryPage extends BasePage {
     }
 
     async getPageTitle(): Promise<string> {
+        // eslint-disable-next-line playwright/prefer-locator
         return (await this.pageTitle.textContent()) ?? '';
     }
 
