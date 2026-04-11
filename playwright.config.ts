@@ -17,8 +17,19 @@ export default defineConfig({
     },
     projects: [
         {
+            name: 'setup',
+            testMatch: '**/setup/**/*.spec.ts',
+            use: {
+                baseURL: 'https://www.saucedemo.com',
+            },
+        },
+        {
             name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
+            use: {
+                ...devices['Desktop Chrome'],
+                storageState: '.auth/standard_user.json',
+            },
+            dependencies: ['setup'],
         },
     ],
     webServer: undefined,

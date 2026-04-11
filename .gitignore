@@ -8,3 +8,6 @@ playwright-traces/
 .env
 .env.local
 ctrf/
+.auth/
+.playwright/
+.playwright-cli/

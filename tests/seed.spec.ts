@@ -1,7 +1,8 @@
-import { test } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 test.describe('Test group', () => {
-  test('seed', async () => {
-    // generate code here.
-  });
+    test('seed', async ({ page }) => {
+        await page.goto('/');
+        await expect(page).toHaveTitle(/Swag Labs/);
+    });
 });
