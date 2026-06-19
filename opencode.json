@@ -96,6 +96,57 @@
         "playwright-test*planner_setup_page": true,
         "playwright-test*planner_save_plan": true
       }
+    },
+    "pw-pom-builder": {
+      "description": "Use this agent to capture real Playwright locators from the live browser (via playwright-test MCP) and write/extend Page Object Model files under pages/. Triggered when implementing POMs for new test scenarios.",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/prompts/pw-pom-builder.md}",
+      "tools": {
+        "ls": true,
+        "glob": true,
+        "grep": true,
+        "read": true,
+        "edit": true,
+        "write": true,
+        "playwright-test*browser_navigate": true,
+        "playwright-test*browser_navigate_back": true,
+        "playwright-test*browser_snapshot": true,
+        "playwright-test*browser_generate_locator": true,
+        "playwright-test*browser_click": true,
+        "playwright-test*browser_type": true,
+        "playwright-test*browser_select_option": true,
+        "playwright-test*browser_press_key": true,
+        "playwright-test*browser_hover": true,
+        "playwright-test*browser_evaluate": true,
+        "playwright-test*browser_wait_for": true
+      }
+    },
+    "pw-adversarial-reviewer": {
+      "description": "Use this agent to adversarially review newly written Playwright POM + spec files: audit locator quality and POM conventions, run the tests, fix issues, and iterate until green.",
+      "mode": "subagent",
+      "prompt": "{file:.opencode/prompts/pw-adversarial-reviewer.md}",
+      "tools": {
+        "ls": true,
+        "glob": true,
+        "grep": true,
+        "read": true,
+        "edit": true,
+        "write": true,
+        "playwright-test*browser_snapshot": true,
+        "playwright-test*browser_evaluate": true,
+        "playwright-test*browser_console_messages": true,
+        "playwright-test*browser_network_requests": true,
+        "playwright-test*browser_generate_locator": true,
+        "playwright-test*test_list": true,
+        "playwright-test*test_run": true,
+        "playwright-test*test_debug": true
+      }
+    }
+  },
+  "command": {
+    "pw-implement": {
+      "description": "Implement Playwright test cases end-to-end: plan -> POM from real browser locators -> spec -> adversarial review/fix -> lint/typecheck -> commit. Pass test cases as free-text argument.",
+      "template": "{file:.opencode/prompts/pw-implement.md}"
     }
   }
 }
