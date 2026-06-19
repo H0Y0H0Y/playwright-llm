@@ -11,3 +11,6 @@ ctrf/
 .auth/
 .playwright/
 .playwright-cli/
+tests/_plan/
+tests/seed.spec.ts
+docs/
