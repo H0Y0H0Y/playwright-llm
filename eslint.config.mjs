@@ -6,6 +6,9 @@ import { plugin } from "typescript-eslint";
 
 export default [
     {
+        ignores: ["dist/"]
+    },
+    {
         files: ["**/*.ts", "**/*.tsx"],
         plugins: {
             "@typescript-eslint": typescript,
